@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mon-portfolio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mon-portfolio
+  template:
+    metadata:
+      labels:
+        app: mon-portfolio
+    spec:
+      containers:
+      - name: mon-portfolio
+        image: omarelhedfi/mon-portfolio:latest
+        ports:
+        - containerPort: 3000
